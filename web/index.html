@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>captionkit — convert & re-sync subtitles (SRT ⇄ VTT), locally</title>
+    <meta
+      name="description"
+      content="Convert subtitles between SRT and WebVTT, shift timing, fix drift and overlaps — all in your browser. Drop a .srt or .vtt, fix the sync, download. Nothing uploaded."
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>🎬 captionkit</h1>
+      <p class="tagline">
+        Convert &amp; <strong>re-sync subtitles</strong> — SRT ⇄ WebVTT, shift,
+        fix drift &amp; overlaps. In your browser.
+      </p>
+      <p class="privacy">🔒 100% local — your subtitle file never leaves your browser.</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <div class="head">
+          <span>Subtitles in</span>
+          <span>
+            <button id="sample" type="button">Load sample</button>
+            <button id="pick" type="button">Open file</button>
+            <input id="file" type="file" accept=".srt,.vtt,text/plain" hidden />
+          </span>
+        </div>
+        <textarea id="input" placeholder="Paste .srt or .vtt here, or drop a file…" spellcheck="false"></textarea>
+        <div id="status" class="status"></div>
+      </section>
+
+      <section class="card controls">
+        <div class="row">
+          <label>Shift (seconds, +/−)
+            <input id="shift" type="number" step="0.1" value="0" />
+          </label>
+          <label>Output
+            <select id="format"><option value="srt">SRT</option><option value="vtt">WebVTT</option></select>
+          </label>
+        </div>
+        <div class="row checks">
+          <label><input type="checkbox" id="fix" /> Fix overlaps (min 40ms gap)</label>
+        </div>
+        <div class="row">
+          <button id="apply" type="button" class="primary">Apply</button>
+          <button id="copy" type="button">Copy</button>
+          <button id="download" type="button">Download</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="head"><span>Result</span></div>
+        <textarea id="output" readonly spellcheck="false"></textarea>
+      </section>
+    </main>
+
+    <footer>
+      <a href="https://github.com/didrod205/captionkit">GitHub</a> ·
+      <a href="https://www.npmjs.com/package/captionkit">npm</a> ·
+      <span>MIT</span> · <span>Zero dependencies</span>
+    </footer>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
