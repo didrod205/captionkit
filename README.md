@@ -50,13 +50,31 @@ media tooling who want a tiny subtitle library.
 
 **No install —** just open the **[web app](https://didrod205.github.io/captionkit/)**.
 
-For the library:
+**Command line:**
+
+```bash
+npx captionkit convert subs.srt --to vtt > subs.vtt
+npx captionkit shift subs.srt --ms 2000        # delay everything by 2s
+npx captionkit scale subs.srt --factor 1.0427  # fix fps drift
+```
+
+**Library:**
 
 ```bash
 npm install captionkit
 ```
 
 Zero dependencies. ESM + CJS + TypeScript types. Runs in the browser, Node, Deno and Bun.
+
+## CLI
+
+```bash
+captionkit <convert|shift|scale|fix|info> [file] [options]
+cat subs.srt | captionkit info
+```
+
+Commands: `convert` (`--to srt|vtt`), `shift` (`--ms`), `scale` (`--factor`),
+`fix` (`--gap`), `info`. Use `-o/--out` to write a file, or it prints to stdout.
 
 ## Usage
 

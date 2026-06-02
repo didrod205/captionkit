@@ -1,6 +1,6 @@
 {
   "name": "captionkit",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Convert and re-time subtitles locally — SRT ⇄ WebVTT, shift, scale, resync drift, fix overlaps. Exact millisecond timecode math, zero dependencies, no upload.",
   "type": "module",
   "main": "./dist/index.js",
@@ -42,7 +42,8 @@
     "timecode",
     "video",
     "accessibility",
-    "zero-dependency"
+    "zero-dependency",
+    "cli"
   ],
   "author": "didrod205 (https://github.com/didrod205)",
   "license": "MIT",
@@ -55,9 +56,13 @@
   },
   "homepage": "https://didrod205.github.io/captionkit/",
   "devDependencies": {
+    "@types/node": "^22.19.19",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2",
     "vite": "^6.0.0",
     "vitest": "^2.1.8"
+  },
+  "bin": {
+    "captionkit": "./dist/cli.js"
   }
 }

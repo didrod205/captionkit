@@ -6,6 +6,12 @@ project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.2.0]
+
+### Added
+
+- **Command-line interface** (`captionkit` bin), zero-dependency: `convert` (SRT⇄VTT), `shift` (--ms), `scale` (--factor), `fix` (remove overlaps), and `info`. Reads a file or stdin; writes stdout or `-o`.
+
 ## [0.1.0]
 
 ### Added
@@ -19,5 +25,6 @@ project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Free, local-only web app (convert + re-sync + download) on GitHub Pages.
 - Zero runtime dependencies; ESM + CJS + TypeScript types.
 
-[Unreleased]: https://github.com/didrod205/captionkit/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/didrod205/captionkit/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/didrod205/captionkit/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/didrod205/captionkit/releases/tag/v0.1.0
